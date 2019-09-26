@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import UserContext from "../../context/UserContext/context";
 import { FiUser, FiHeart } from "react-icons/fi";
-
 import { Container } from "./styles";
 
 export default function TopInfo() {
+  const user = useContext(UserContext);
+
+  console.log(user);
+
   return (
     <Container>
       <span>
@@ -12,7 +16,7 @@ export default function TopInfo() {
       </span>
       <span>
         <FiUser />
-        Jeniffer Carvalho
+        {user.name}
       </span>
     </Container>
   );
