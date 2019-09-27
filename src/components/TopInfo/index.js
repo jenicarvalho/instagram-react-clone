@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import UserContext from "../../context/UserContext/context";
 import { FiUser, FiHeart } from "react-icons/fi";
 import { Container } from "./styles";
@@ -6,7 +6,12 @@ import { Container } from "./styles";
 export default function TopInfo() {
   const user = useContext(UserContext);
 
-  console.log(user);
+  const { userInfo, fetchUser } = user;
+
+  useEffect(() => {
+    fetchUser();
+    //eslint-disable-next-line
+  }, []);
 
   return (
     <Container>
