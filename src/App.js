@@ -2,14 +2,14 @@ import React from "react";
 import Home from "./Pages/Home";
 import GlobalStyle from "./styles/global";
 
-import UserState from "./context/UserContext/state";
+import UserProvider from "./context/userProvider";
 
 function App() {
   return (
-    <UserState>
+    <UserProvider>
       <Home />
       <GlobalStyle />
-    </UserState>
+    </UserProvider>
   );
 }
 
