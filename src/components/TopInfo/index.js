@@ -1,28 +1,28 @@
-import React, { useContext, useEffect } from "react";
-import UserContext from "../../context/UserContext/context";
+import React, { Component } from "react";
+import { UserContext } from "../../context/userProvider";
 import { FiUser, FiHeart } from "react-icons/fi";
 import { Container } from "./styles";
 
-export default function TopInfo() {
-  const user = useContext(UserContext);
+export default class TopInfo extends Component {
 
-  const { userInfo, fetchUser } = user;
-
-  useEffect(() => {
-    fetchUser();
-    //eslint-disable-next-line
-  }, []);
-
-  return (
-    <Container>
-      <span>
-        <FiHeart />
-        <b>20</b>
-      </span>
-      <span>
-        <FiUser />
-        {user.name}
-      </span>
-    </Container>
-  );
+  render() {
+    return (
+      <UserContext.Consumer>
+        {
+          state => (
+          <Container>
+            <span>
+              <FiHeart />
+              <b>{state.likes}</b>
+            </span>
+            <span>
+              <FiUser />
+              {state.name}
+            </span>
+          </Container>
+          )
+        }
+      </UserContext.Consumer>
+    )
+  }
 }
