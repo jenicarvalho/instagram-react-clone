@@ -42,6 +42,8 @@ export const User = styled.div`
 
 export const PostImage = styled.div`
   line-height: 0;
+  max-height: 400px;
+  overflow: hidden;
   img {
     width: 100%;
     height: 100%;
