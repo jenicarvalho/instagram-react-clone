@@ -20,6 +20,10 @@ export const Container = styled.div`
       margin-right: 10px;
     }
   }
+
+  p {
+    margin: 15px;
+  }
 `;
 
 export const User = styled.div`
