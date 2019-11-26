@@ -1,22 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
 
 export const UserContext = React.createContext();
 
-class UserProvider extends React.Component {
- 
-  state = {
-    name: 'Jeniffer Carvalho',
-    user: 'jenicarvalho',
-    likes: 20
-  }; 
+export default function UserProvider(props) {
+  const [userInfo, setUserInfo] = useState([]);
 
-  render() {
-    return (
-      <UserContext.Provider value={this.state}>
-        {this.props.children}
-      </UserContext.Provider>
-    );
-  }
+  useEffect(() => {
+    fetch("http://localhost:4000/user", {
+      method: "GET"
+    })
+      .then(res => res.json())
+      .then(response => {
+        setUserInfo(response);
+      })
+      .catch(error => console.log(error));
+  }, []);
+
+  return (
+    <UserContext.Provider value={userInfo}>
+      {props.children}
+    </UserContext.Provider>
+  );
 }
-
-export default UserProvider;
