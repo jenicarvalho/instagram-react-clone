@@ -4,25 +4,22 @@ import { FiUser, FiHeart } from "react-icons/fi";
 import { Container } from "./styles";
 
 export default class TopInfo extends Component {
-
   render() {
     return (
       <UserContext.Consumer>
-        {
-          state => (
+        {userInfo => (
           <Container>
             <span>
               <FiHeart />
-              <b>{state.likes}</b>
+              <b>{userInfo.likes}</b>
             </span>
             <span>
               <FiUser />
-              {state.name}
+              {userInfo.name}
             </span>
           </Container>
-          )
-        }
+        )}
       </UserContext.Consumer>
-    )
+    );
   }
 }
