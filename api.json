@@ -31,5 +31,35 @@
       "location": "Mars",
       "description": "🧭 Explorer, 📸 photographer, ⛰️ geologist, 🧪 chemist... Mars Curiosity does it all!⁣"
     }
-  ]
+  ],
+  "stories": [
+    {
+      "id": 11,
+      "user": "natgeo",
+      "userPicture": "https://randomuser.me/api/portraits/men/11.jpg",
+      "time": "há 22 minutos"
+    },
+    {
+      "id": 22,
+      "user": "nasa",
+      "userPicture": "https://randomuser.me/api/portraits/women/18.jpg",
+      "time": "há 30 minutos"
+    },
+    {
+      "id": 33,
+      "user": "history",
+      "userPicture": "https://randomuser.me/api/portraits/women/20.jpg",
+      "time": "há 2 horas"
+    },
+    {
+      "id": 44,
+      "user": "discovery",
+      "userPicture": "https://randomuser.me/api/portraits/men/2.jpg",
+      "time": "há 7 horas"
+    }
+  ],
+  "user": {
+    "name": "Jeniffer Carvalho",
+    "username": "jenicarvalho"
+  }
 }
