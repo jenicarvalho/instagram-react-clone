@@ -2,15 +2,15 @@ import React from "react";
 
 import { Container, User, Image } from "./styles";
 
-export default function Storie() {
+export default function Storie(props) {
   return (
     <Container>
       <Image>
-        <img src="https://randomuser.me/api/portraits/men/10.jpg" alt="user" />
+        <img src={props.content.userPicture} alt="user" />
       </Image>
       <User>
-        <strong>diegos</strong>
-        <span>Há 2 horas</span>
+        <strong>{props.content.user}</strong>
+        <span>{props.content.time}</span>
       </User>
     </Container>
   );
